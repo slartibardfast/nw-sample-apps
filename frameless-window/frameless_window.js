@@ -56,6 +56,19 @@ window.onload = function() {
   document.getElementById("close-window-button").onclick = function() {
     window.close();
   }
+  document.getElementById("open-window-button").onclick = function() {
+    var gui = require('nw.gui');
+    gui.Window.open('frameless_window.html', {
+      "show": false,
+      "toolbar": false,
+      "frame": false,
+      "position": "center",
+      "width": 360,
+      "height": 300,
+      "min_width": 220,
+      "min_height": 220
+	  });
+  }
   
   updateContentStyle();
   require("nw.gui").Window.get().show();
